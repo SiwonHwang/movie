@@ -23,6 +23,12 @@ int main(int argc, char *argv[]) {
 	//1. reading the movie.dat-----------------------------
 	//1.1 FILE open
 	
+	printf("Reading the data files...");
+	
+	fp = fopen("movie.dat","r"); //파일을 읽기 모드로 열기
+	
+	printf("Read done! %i items are read.", 파일개수); ///////////////////////////////////////////////////////////////////파일개수 확인  
+	
 	//1.2 list generation (use function list_genList() )
 	list = list_genList();
 	
@@ -34,11 +40,21 @@ int main(int argc, char *argv[]) {
 	}
 
 	//1.4 FILE close
+	fclose(fp);
 	
 	//2. program start
 	while(exit_flag == 0) 
 	{
 		//2.1 print menu message and get input option
+		printf("-----------------------------Menu-----------------------------\n");
+		printf("1. print all the movies\n");
+		printf("2. search for specific country movies\n");
+		printf("3. search for specific runtime movies\n");
+		printf("4. search for specific score movies\n");
+		printf("5. exit\n");
+		printf("-----------------------------Menu-----------------------------\n\n"); //메뉴 출력
+		printf("-- select an option : ");
+		scanf("%i", &option);  //사용자로부터 옵션을 선택 받음 
 		
 		switch(option)
 		{
@@ -58,6 +74,8 @@ int main(int argc, char *argv[]) {
 				
 			case 2: //print movies of specific country
 				//2.3.1 get country name to search for
+				printf("select a country : ");
+				scanf("%s", &)
 				
 				ndPtr = list;
 					while (/* repeat until the ndPtr points to the end node */)

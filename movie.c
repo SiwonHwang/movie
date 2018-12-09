@@ -15,7 +15,20 @@ void* mv_genMvInfo(char* name, float score, int runTime, char* country)
 {
 	movInfo_t* mvPtr;
 	
-	//allocate memory and set the member variables
+	//allocate memory and set the member variables 
+	//메모리 할당 -> malloc 함수 사용 
+	mvPtr = (movInfo_t*)malloc( sizeof(movInfo_t) ); 
+	
+	if (mvPtr == NULL)
+	{
+		printf("메모리 할당 오류\n");
+	}
+	
+	//변수값 할당 -> 구조체는 strcpy 이용 
+	strcpy(mvPtr->name, name);
+	strcpy(mvPtr->madeIn, country);
+	mvPtr->runTime = runTime;
+	mvPtr->score = score;
 	
 	return (void*)mvPtr;
 }
@@ -39,7 +52,7 @@ void mv_print(void* obj)
 //return the score value from the input instance of movInfo_t structure
 float mv_getScore(void* obj)
 {
-	return movInfo_t->score;
+	return (movInfo_t->score);
 }
 
 //return the runtime value from the input instance of movInfo_t structure

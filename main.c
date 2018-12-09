@@ -23,19 +23,24 @@ int main(int argc, char *argv[]) {
 	//1. reading the movie.dat-----------------------------
 	//1.1 FILE open
 	
-	printf("Reading the data files...");
+	printf("Reading the data files...\n");
 	
 	fp = fopen("movie.dat","r"); //파일을 읽기 모드로 열기
 	
-	printf("Read done! %i items are read.", 파일개수); ///////////////////////////////////////////////////////////////////파일개수 확인  
+	printf("Read done! %d items are read.\n", list_len(list)); //열린 파일 개수 출력되도록 함   
 	
 	//1.2 list generation (use function list_genList() )
 	list = list_genList();
 	
 	//1.3 read each movie data from the file and add it to the linked list
-	while ( /* read name, country, runtime and score*/ )
+	while ((fgetc(fp) != EOF)) /* read name, country, runtime and score*/
 	{	
+		fscanf(fp, "%s %s %d %f", name, country, &runTime, &score);
+		
 		//generate a movie info instance(mvInfo) with function mv_genMvInfo()
+		
+		mvInfo = mv_genMvInfo(name, score, runTime, country);
+		
 		list_addTail(mvInfo, list);
 	}
 
@@ -54,21 +59,29 @@ int main(int argc, char *argv[]) {
 		printf("5. exit\n");
 		printf("-----------------------------Menu-----------------------------\n\n"); //메뉴 출력
 		printf("-- select an option : ");
-		scanf("%i", &option);  //사용자로부터 옵션을 선택 받음 
+		scanf("%d", &option);  //사용자로부터 옵션을 선택 받음 
 		
 		switch(option)
 		{
 			case 1: //print all the movies
 				printf("printing all the movies in the list.....\n\n\n");
+				printf("----------------------------------------------\n");
 				
 				ndPtr = list;
-				while (/* repeat until the ndPtr points to the end node */)
+				while (list_isEndNode(ndPtr) == 0) /* repeat until the ndPtr points to the end node */
 				{
 					//2.2 print a movie data : use functions of movie.c and linkedList.c
 					//ndPtr = the next node of the ndPtr;
+					ndPtr = list_getNextNode(ndPtr);
+					
 					//get object of ndPtr to mvInfo void pointer
+					mvInfo = list_getNdObj(ndPtr);
+					
 					//print the contents of the mvInfo
+					mv_print(mvInfo);
+					printf("----------------------------------------------\n\n");
 				}
+				printf(" - totally %d movies are listed!\n", list_len(list));
 				
 				break;
 				

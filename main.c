@@ -59,7 +59,7 @@ int main(int argc, char *argv[]) {
 	
 	//2. program start
 	
-	printf("Read done! %d items are read.\n", list_len(list)); //읽힌 파일 개수 출력되도록 하기 
+	printf("Read done! %d items are read.\n\n", list_len(list)); //읽힌 파일 개수 출력되도록 하기 
 	
 	
 	while(exit_flag == 0) 
@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
 		switch(option)
 		{
 			case 1: //print all the movies
-				printf("printing all the movies in the list.....\n\n\n");
+				printf("\nprinting all the movies in the list.....\n\n\n");
 				printf("----------------------------------------------\n");
 				
 				ndPtr = list; //ndPtr이 리스트 가리킴 
@@ -93,9 +93,9 @@ int main(int argc, char *argv[]) {
 					
 					//print the contents of the mvInfo
 					mv_print(mvInfo);
-					printf("----------------------------------------------\n\n");
+					printf("----------------------------------------------\n");
 				}
-				printf(" - totally %d movies are listed!\n", list_len(list)); //출력된 영화 개수 출력하기 
+				printf("\n - totally %d movies are listed!\n\n", list_len(list)); //출력된 영화 개수 출력하기 
 				
 				break;
 				
@@ -103,7 +103,7 @@ int main(int argc, char *argv[]) {
 				//2.3.1 get country name to search for
 				printf("select a country : ");
 				scanf("%s", &selectCountry); //특정 나라 입력받기 
-				printf("----------------------------------------------\n");
+				printf("\n----------------------------------------------\n");
 				
 				num = 0; //변수 초기화 
 				
@@ -122,11 +122,11 @@ int main(int argc, char *argv[]) {
 					{
 						//then print the contents of the mvInfo
 					    mv_print(mvInfo);
-					    printf("----------------------------------------------\n\n");
+					    printf("----------------------------------------------\n");
 					    num++; //총 영화 개수 출력하기 위해 1씩 증가 
 					}
 				}
-				printf(" - totally %d movies are listed!\n", num); //출력된 영화 개수 출력하기
+				printf("\n - totally %d movies are listed!\n\n", num); //출력된 영화 개수 출력하기
 				
 				break;
 				
@@ -134,7 +134,7 @@ int main(int argc, char *argv[]) {
 				//2.4.1 get minimal runtime value to search for
 				printf("select a runtime : ");
 				scanf("%d", &selectRuntime); //특정 런타임 입력받기 
-				printf("----------------------------------------------\n");
+				printf("\n----------------------------------------------\n");
 				
 				num = 0; //변수 초기화 
 				
@@ -153,11 +153,11 @@ int main(int argc, char *argv[]) {
 					{
 						//then print the contents of the mvInfo
 						mv_print(mvInfo);
-						printf("----------------------------------------------\n\n");
+						printf("----------------------------------------------\n");
 					    num++; //총 영화 개수 출력하기 위해 1씩 증가 
 					}
 				}
-				printf(" - totally %d movies are listed!\n", num); //출력된 영화 개수 출력하기
+				printf("\n - totally %d movies are listed!\n\n", num); //출력된 영화 개수 출력하기
 				
 				break;
 				
@@ -165,7 +165,7 @@ int main(int argc, char *argv[]) {
 				//2.5.1 get minimal score value to search for
 				printf("select a score : ");
 				scanf("%f", &selectScore); //특정 평점 입력받기 
-				printf("----------------------------------------------\n");
+				printf("\n----------------------------------------------\n");
 				
 				num = 0; //변수 초기화 
 				
@@ -184,25 +184,25 @@ int main(int argc, char *argv[]) {
 					{
 						//then print the contents of the mvInfo
 						mv_print(mvInfo);
-						printf("----------------------------------------------\n\n");
+						printf("----------------------------------------------\n");
 					    num++; //총 영화 개수 출력하기 위해 1씩 증가 
 						
 					}
 				}
-				printf(" - totally %d movies are listed!\n", num); //출력된 영화 개수 출력하기 
+				printf("\n - totally %d movies are listed!\n\n", num); //출력된 영화 개수 출력하기 
 				
 				break;
 				
 			case 5:
 				//exit의 경우 
-				printf("Bye!\n\n");
+				printf("\n\nBye!\n\n");
 				exit_flag = 1;
 				break;
 				
 			default:
 				//사용자가 입력한 옵션이 1~5의 경우가 아닐 때 
 				
-				printf("wrong command! input again\n"); //다시 입력받기 
+				printf("\nwrong command! input again\n\n"); //다시 입력받기 
 				break;
 		}
 	}

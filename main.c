@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
 				{
 					//2.2 print a movie data : use functions of movie.c and linkedList.c
 					//ndPtr = the next node of the ndPtr;
-					ndPtr = list_getNextNode(ndPtr);
+					ndPtr = list_getNextNd(ndPtr);
 					
 					//get object of ndPtr to mvInfo void pointer
 					mvInfo = list_getNdObj(ndPtr);
@@ -112,7 +112,7 @@ int main(int argc, char *argv[]) {
 				{
 					//2.3.2 print a movie data : use functions of movie.c and linkedList.c
 					//ndPtr = the next node of the ndPtr;
-					ndPtr = list_getNextNode(ndPtr);
+					ndPtr = list_getNextNd(ndPtr);
 					
 					//get object of ndPtr to mvInfo void pointer
 					mvInfo = list_getNdObj(ndPtr);
@@ -143,7 +143,7 @@ int main(int argc, char *argv[]) {
 				{
 					//2.4.2 print a movie data : use functions of movie.c and linkedList.c
 					//ndPtr = the next node of the ndPtr;
-					ndPtr = list_getNextNode(ndPtr);
+					ndPtr = list_getNextNd(ndPtr);
 					
 					//get object of ndPtr to mvInfo void pointer
 					mvInfo = list_getNdObj(ndPtr);
@@ -174,7 +174,7 @@ int main(int argc, char *argv[]) {
 				{
 					//2.5.2 print a movie data : use functions of movie.c and linkedList.c
 					//ndPtr = the next node of the ndPtr;
-					ndPtr = list_getNextNode(ndPtr);
+					ndPtr = list_getNextNd(ndPtr);
 					
 					//get object of ndPtr to mvInfo void pointer
 					mvInfo = list_getNdObj(ndPtr);

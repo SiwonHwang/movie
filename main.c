@@ -149,7 +149,7 @@ int main(int argc, char *argv[]) {
 					mvInfo = list_getNdObj(ndPtr);
 					
 					//if the input runtime is lower than the runtime of the movie,
-					if(selectRuntime <= mv_getRunTime(mvInfo)) //입력받은 런타임보다 런타임이 클 경우 
+					if(selectRuntime < mv_getRunTime(mvInfo)) //입력받은 런타임보다 런타임이 클 경우 
 					{
 						//then print the contents of the mvInfo
 						mv_print(mvInfo);
@@ -180,7 +180,7 @@ int main(int argc, char *argv[]) {
 					mvInfo = list_getNdObj(ndPtr);
 					
 					//if the input score is lower than the score of the movie,
-					if(selectScore <= mv_getScore(mvInfo)) //입력받은 평점보다 평점이 클 경우 
+					if(selectScore < mv_getScore(mvInfo)) //입력받은 평점보다 평점이 클 경우 
 					{
 						//then print the contents of the mvInfo
 						mv_print(mvInfo);

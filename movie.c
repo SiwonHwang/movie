@@ -53,28 +53,28 @@ void mv_print(void* obj)
 float mv_getScore(void* obj)
 {
 	movInfo_t* mvPtr = (movInfo_t*)obj;
-	return (mvPtr->score);
+	return (mvPtr->score); //포인터 mvPtr을 받은 후 score로 반환
 }
 
 //return the runtime value from the input instance of movInfo_t structure
 int mv_getRunTime(void* obj)
 {
 	movInfo_t* mvPtr = (movInfo_t*)obj;
-	return (mvPtr->runTime);
+	return (mvPtr->runTime); //포인터 mvPtr을 받은 후 runTime으로 반환
 }
 
 //return the name string pointer from the input instance of movInfo_t structure
 char* mv_getName(void* obj)
 {
-	movInfo_t* mvPtr = (movInfo_t*)obj;
-	return (mvPtr->name);
+	movInfo_t* mvPtr = (movInfo_t*)obj; 
+	return (mvPtr->name); //포인터 mvPtr을 받은 후 name으로 반환 
 }
 
 //return the country string pointer from the input instance of movInfo_t structure
 char* mv_getCountry(void* obj)
 {
 	movInfo_t* mvPtr = (movInfo_t*)obj;
-	return (mvPtr->madeIn);
+	return (mvPtr->madeIn); //포인터 mvPtr을 받은 후 madeIn으로 반환
 }
 
 
